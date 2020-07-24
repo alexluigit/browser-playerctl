@@ -24,16 +24,32 @@ class YoutubeMusic extends MprisBase {
         if (text.length != 2)
             return 0;
 
-        callback(this.microSeconds(text[0].trim()));
+  setShuffle(callback, value) {}
+
+  setLoopStatus(callback, value) {
+    console.log("YoutubeMusic", "setLoop", value, arguments);
+
+    if (value === "Playlist" && $('[title="Repeat off"]')) {
+      $('[title="Repeat off"]').click();
+    } else if (value === "Playlist" && $('[title="Repeat one"]')) {
+      $('[title="Repeat one"]').click();
+      setTimeout(() => $('[title="Repeat one"]').click(), 500);
     }
 
-    setRate(callback) {
-        // Not supported 
+    if (value === "Track" && $('[title="Repeat off"]')) {
+      $('[title="Repeat off"]').click();
+      setTimeout(() => $('[title="Repeat all"]').click(), 500);
+    } else if (value === "Track" && $('[title="Repeat all"]')) {
+      $('[title="Repeat all"]').click();
     }
 
-    setVolume(callback) {
-        
+    if (value === "None" && $('[title="Repeat all"]')) {
+      $('[title="Repeat all"]').click();
+      setTimeout(() => $('[title="Repeat one"]').click(), 500);
+    } else if (value === "None" && $('[title="Repeat one"]')) {
+      $('[title="Repeat one"]').click();
     }
+  }
 
     setShuffle(callback, value) {
 
