@@ -22,7 +22,7 @@ def main(args):
     if len(args) < 1:
         args.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'mpris2'))
 
-    ext_id = "ojjjidifjmbbckdjfiagdfdepbcmnicg"
+    ext_id = "panjamcljfagoicapnnecgccbcpmfbfg"
     prog_path = args[0]
 
     # Chrome's extension IDs are in hexadecimal but using a-p, referred
