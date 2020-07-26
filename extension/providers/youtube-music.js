@@ -36,23 +36,27 @@ class YoutubeMusic extends MprisBase {
   setLoopStatus(callback, value) {
     console.log("YoutubeMusic", "setLoop", value, arguments);
 
+    var loopButton = $('#expand-repeat')
     if (value === "Playlist" && $('[title="Repeat off"]')) {
       $('[title="Repeat off"]').click();
     } else if (value === "Playlist" && $('[title="Repeat one"]')) {
       $('[title="Repeat one"]').click();
-      setTimeout(() => $('[title="Repeat one"]').click(), 500);
+      // setTimeout(() => $('[title="Repeat one"]').click(), 500);
+      setTimeout(() => loopButton.click(), 500);
     }
 
     if (value === "Track" && $('[title="Repeat off"]')) {
       $('[title="Repeat off"]').click();
-      setTimeout(() => $('[title="Repeat all"]').click(), 500);
+      setTimeout(() => loopButton.click(), 500);
+      // setTimeout(() => $('[title="Repeat all"]').click(), 500);
     } else if (value === "Track" && $('[title="Repeat all"]')) {
       $('[title="Repeat all"]').click();
     }
 
     if (value === "None" && $('[title="Repeat all"]')) {
       $('[title="Repeat all"]').click();
-      setTimeout(() => $('[title="Repeat one"]').click(), 500);
+      setTimeout(() => loopButton.click(), 500);
+      // setTimeout(() => $('[title="Repeat one"]').click(), 500);
     } else if (value === "None" && $('[title="Repeat one"]')) {
       $('[title="Repeat one"]').click();
     }
